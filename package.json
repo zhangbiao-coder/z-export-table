@@ -1,0 +1,43 @@
+{
+  "name": "z-export-table",
+  "version": "1.0.0",
+  "description": "一款简单的html的table片段导出为excel表格的工具",
+  "scripts": {
+    "build": "rollup --config"
+  },
+  "types": "dist/lib/index.d.ts",
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "private": false,
+  "keywords": [
+    "z-export-table",
+    "table",
+    "export table",
+    "export excel",
+    "excel",
+    "html to excel",
+    "html2excel"
+  ],
+  "author": "zhangbiao-coder",
+  "license": "MIT",
+  "repository": {
+    "type": "GIT",
+    "url": "https://github.com/zhangbiao-coder/z-export-table.git"
+  },
+  "homepage": "https://github.com/zhangbiao-coder/z-export-table",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@rollup/plugin-typescript": "^11.1.2",
+    "@types/node": "^20.3.3",
+    "rollup": "^3.28.0",
+    "ts-loader": "^9.4.4",
+    "tslib": "^2.6.1",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {}
+}
