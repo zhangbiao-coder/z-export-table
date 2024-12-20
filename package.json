@@ -1,10 +1,12 @@
 {
   "name": "z-export-table",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "一款简单的html的table片段导出为excel表格的工具",
   "scripts": {
-    "build": "rollup --config"
+    "buildumd": "rollup --config rollup.config.umd.mjs",
+    "buildesm": "rollup --config rollup.config.esm.mjs"
   },
+  "module": "dist/z-export-table.esm.min.js",
   "types": "dist/lib/index.d.ts",
   "type": "module",
   "files": [
@@ -38,6 +40,5 @@
     "ts-loader": "^9.4.4",
     "tslib": "^2.6.1",
     "typescript": "^5.5.3"
-  },
-  "dependencies": {}
+  }
 }

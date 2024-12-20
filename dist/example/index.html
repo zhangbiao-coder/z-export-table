@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 14px;
+      text-align: center;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+    .highlight {
+      background-color: #ffeb3b;
+      font-weight: bold;
+    }
+    .merged {
+      background-color: #ffc107;
+    }
+    .header {
+      background-color: #ff7043;
+      color: white;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body>
+<div>
+  <button type="button" onclick="exportsExcel()">导出Excel</button>
+</div>
+
+<table id ="table">
+  <thead>
+  <!-- 第一行表头 -->
+  <tr>
+    <th rowspan="3">#</th>
+    <th rowspan="3">Category</th>
+    <th colspan="6" class="header">Detailed Information</th>
+  </tr>
+  <!-- 第二行表头 -->
+  <tr>
+    <th rowspan="2">Sub-category</th>
+    <th colspan="2">Contact</th>
+    <th colspan="2">Statistics</th>
+    <th rowspan="2">Status</th>
+  </tr>
+  <!-- 第三行表头 -->
+  <tr>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Count</th>
+    <th>Percentage</th>
+  </tr>
+  </thead>
+  <tbody>
+  <!-- 数据行 1 -->
+  <tr>
+    <td>1</td>
+    <td rowspan="3">Technology</td>
+    <td>Software</td>
+    <td>software&#64;example.com</td>
+    <td>+1-123-456-7890</td>
+    <td>520123199801230310</td>
+    <td>75%</td>
+    <td class="highlight">Active</td>
+  </tr>
+  <!-- 数据行 2 -->
+  <tr>
+    <td>2</td>
+    <td>Hardware</td>
+    <td>hardware&#64;example.com</td>
+    <td>+1-987-654-3210</td>
+    <td>50</td>
+    <td>25%</td>
+    <td>Inactive</td>
+  </tr>
+  <!-- 数据行 3 -->
+  <tr>
+    <td>3</td>
+    <td class="merged" colspan="6">No further data available</td>
+  </tr>
+  <!-- 数据行 4 -->
+  <tr>
+    <td>4</td>
+    <td rowspan="2">Finance</td>
+    <td>Accounts</td>
+    <td>accounts&#64;example.com</td>
+    <td>+1-555-666-7777</td>
+    <td>200</td>
+    <td>60%</td>
+    <td class="highlight">Pending</td>
+  </tr>
+  <!-- 数据行 5 -->
+  <tr>
+    <td>5</td>
+    <td>Payroll</td>
+    <td>payroll&#64;example.com</td>
+    <td>+1-888-999-0000</td>
+    <td>100</td>
+    <td>40%</td>
+    <td>Completed</td>
+  </tr>
+  <!-- 跨行统计数据 -->
+  <tr>
+    <td rowspan="2">6</td>
+    <td rowspan="2">Summary</td>
+    <td colspan="4" class="merged">Total Categories: 3</td>
+    <td colspan="2">Overall Status: Mixed</td>
+  </tr>
+  <tr>
+    <td colspan="6">Report Generated on: <b>2024-06-17</b></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+<script src="../z-export-table.umd.min.js"></script>
+<script>
+  let {ZETUtil} = ZExportTable;
+  function exportsExcel() {
+    let option = {
+      filename: "复杂html导出Excel测试",
+      userCss: `table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; text-align: center; } th, td { border: 1px solid #ddd; padding: 10px; } .highlight { background-color: #ffeb3b; font-weight: bold; } .merged { background-color: #ffc107; } .header { background-color: #ff7043; color: white; font-weight: bold; }`
+    };
+    ZETUtil.exportTableToExcel(document.getElementById("table").outerHTML, option);
+  }
+</script>
+</html>

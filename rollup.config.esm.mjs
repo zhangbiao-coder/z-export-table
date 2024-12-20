@@ -6,19 +6,19 @@ export default {
     input: './src/index.ts',
     output: [
         {
-            file: 'dist/z-export-table.umd.js',
-            format: 'umd',
+            file: 'dist/z-export-table.esm.js',
+            format: 'esm',
             name: 'ZExportTable'
         }, {
-            file: 'dist/z-export-table.umd.min.js',
-            format: 'umd',
+            file: 'dist/z-export-table.esm.min.js',
+            format: 'esm',
             name: 'ZExportTable',
             sourcemap: true,
             plugins: [terser()]
         }
     ],
     plugins: [
-        typescript(),
+        typescript({tsconfig: 'tsconfig.esm.json'}),
         commonjs()
     ]
 }
