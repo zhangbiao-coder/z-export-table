@@ -2,7 +2,8 @@
 
 一款简单的html的table片段导出为excel表格的工具.
 
-### 测试地址：
+### 测试地址：`https://github.com/zhangbiao-coder/z-export-table/blob/master/dist/example/index.html
+(可以复制html代码测试)
 
 ## 使用
 
